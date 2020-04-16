@@ -16,7 +16,7 @@ public class Hero {
     }
 
     public static void ReadStats() {
-        System.out.println("I don't work. Beep boop.")
+        System.out.println("I don't work. Beep boop.");
         //System.out.println(name);
         //System.out.println("Health: " + health);
         //System.out.println("Attack: " + attack);
