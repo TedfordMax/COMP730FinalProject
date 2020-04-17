@@ -4,7 +4,12 @@ import java.util.concurrent.TimeUnit;
 public class Storyboard extends CharacterCreator {
     public static void main(String[] args) {
         CharacterSelection();
-        Chapter1(character);
+        // based on line 6, line 8 needs to have the variable that stores the character String.
+        // However, when I do 
+        // Chapter1(character), i get a "cannot find symbol" error.
+        // we need to remove any hardcoded character names
+        // -scott
+        Chapter1("Archer Squid");
     }
 
     public static void Chapter1(String character) {
