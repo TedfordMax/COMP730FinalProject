@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class Storyboard extends CharacterCreator {
     public static void main(String[] args) {
         CharacterSelection();
+        Chapter1(character);
     }
 
     public static void Chapter1(String character) {
@@ -16,7 +17,7 @@ public class Storyboard extends CharacterCreator {
         Crossroads(character, 1);
         
     }
-    public static void Crossroads(Object character, int chapter) {
+    public static void Crossroads(String character, int chapter) {
         Scanner sc = new Scanner(System.in);
         switch(chapter) {
             case 1:
@@ -74,7 +75,11 @@ public class Storyboard extends CharacterCreator {
         System.out.println("Swordfish: You have trespassed through my territory, young " + character);
         // this still needs work
         // How can we make this be able to call any character?
-        CharacterSelection.Attacks("Archer Squid");
+        // i don't think it's good to hard-code a character name
+        // - scott
+        // PRINT ABILITIES
+        // ABILITIES SELECTION HERE
+        // PLAYER CHOOSES ABILITY
     }
     public static void Chapter1B(String character) {
         try { TimeUnit.SECONDS.sleep(3);

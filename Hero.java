@@ -17,4 +17,22 @@ public class Hero {
         System.out.println("Attack: " + attack);
         System.out.println("Speed: " + speed);
     }
+
+    public static void getAbilities(String name) {
+        switch(name) {
+            case "Archer Squid":
+                System.out.println("Squid Attack 1: Ink Darts");
+                System.out.println("Squid Attack 2: Ink-Tipped Torpedo");
+                System.out.println("Squid Spell: Ink Cloud");
+            case "Warrior Crab":
+                System.out.println("Crab Attack 1: Double Claw Pinch");
+                System.out.println("Crab Attack 2: Crab Stab");
+                System.out.println("Crab Spell: Rangoon Confusion");
+            case "Assassin Starfish":
+                System.out.println("Starfish Attack 1: Sticky Spray");
+                System.out.println("Starfish Attack 2: Starfish Slam");
+                System.out.println("Starfish Spell: Camoflage");
+
+        }
+    }
 }

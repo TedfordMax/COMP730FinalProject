@@ -10,21 +10,29 @@ public class CharacterCreator {
         System.out.println("(3) Assassin Starfish: \n    Health: 2\n    Attack: 2\n    Speed: 3 (+1)");
 
         Scanner in = new Scanner(System.in);
-        String userResponse = in.nextLine();
+        String character = in.nextLine();
 
-        switch (userResponse) {
+        switch (character) {
             case "1":
-                System.out.println("You have selected Archer Squid");
-                Hero Squid = new Hero("Archer Squid", 2, 3, 2);
-                Chapter1("Archer Squid");
+                character = "Archer Squid";
+                System.out.println("You have selected " + character);
+                Hero Squid = new Hero(character, 2, 3, 2);
+                System.out.println(Squid);
+                Hero.getAbilities(character);
                 break;
             case "2":
-                System.out.println("You have selected Warrior Crab");
-                Hero Crab = new Hero("Warrior Crab", 3, 2, 2);
+                character = "Warrior Crab";
+                System.out.println("You have selected " + character);
+                Hero Crab = new Hero(character, 3, 2, 2);
+                System.out.println(Crab);
+                Hero.getAbilities(character);
                 break;
             case "3":
-                System.out.println("You have selected Assassin Starfish");
-                Hero Starfish = new Hero("Assassin Starfish", 2, 2, 3);
+                character = "Assassin Starfish";
+                System.out.println("You have selected " + character);
+                Hero Starfish = new Hero(character, 2, 2, 3);
+                System.out.println(Starfish);
+                Hero.getAbilities(character);
                 break;
         }               
     }
