@@ -1,22 +1,17 @@
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class Storyboard {
+public class Storyboard extends CharacterCreator {
     public static void main(String[] args) {
-        CharSelection();
+        CharacterSelection();
     }
 
     public static void Chapter1(String character) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("CHAPTER 1");
-        System.out.println("SEARCHING FOR FOOD\n");
-        try { TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();}
+        System.out.println("CHAPTER 1\nSEARCHING FOR FOOD\n");
+        try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": There's no food left here...");
-        try { TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();}
+        try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": Ever since the Black Water appeared nearby, The Waterloon Reef has so many new sealife!");
         Crossroads(character, 1);
         
@@ -26,14 +21,11 @@ public class Storyboard {
         switch(chapter) {
             case 1:
                 // sleep
-                try { TimeUnit.SECONDS.sleep(3); 
-                } catch (InterruptedException e) {e.printStackTrace();}
+                try { TimeUnit.SECONDS.sleep(3);} catch (InterruptedException e){e.printStackTrace();}
                 System.out.println("\n\n");
                 // crossroads chapter 1
                 System.out.println(character + ": Should I swim down to find food, or swim to another reef?");
-                try { TimeUnit.SECONDS.sleep(3);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();}
+                try { TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
                 System.out.println("(1) If you swim down, you have to fight a swordfish.\n(2) If you swim to a nearby reef, you have to fight humans who are cleaning up an oil spill.");
                 int option = sc.nextInt();
                 switch(option) {

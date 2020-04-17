@@ -16,6 +16,7 @@ public class CharacterCreator {
             case "1":
                 System.out.println("You have selected Archer Squid");
                 Hero Squid = new Hero("Archer Squid", 2, 3, 2);
+                Chapter1("Archer Squid");
                 break;
             case "2":
                 System.out.println("You have selected Warrior Crab");

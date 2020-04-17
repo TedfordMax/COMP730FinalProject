@@ -1,5 +1,4 @@
 public class Hero {
-
     private static String name = "None";
     private static int health = 0;
     private static int attack = 0;
