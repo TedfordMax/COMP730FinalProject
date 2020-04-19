@@ -12,6 +12,26 @@ public class Hero {
         attack = a;
         speed = s;
     }
+    
+    public static String returnName() {
+        String myname = name;
+        return myname;
+    }
+
+    public static int returnHealth() {
+        int myhealth = health;
+        return myhealth;
+    }
+
+    public static int returnAttack() {
+        int myattack = attack;
+        return myattack;
+    }
+
+    public static int returnSpeed() {
+        int myspeed = speed;
+        return myspeed;
+    }
 
     public static void changeStats(String character, String stat, int amount) {
         switch(stat) {
