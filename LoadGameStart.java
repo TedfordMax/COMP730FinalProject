@@ -23,7 +23,9 @@ public class LoadGameStart {
 
                 Hero savedHero = new Hero(n, h, a, s);
 
-                //System.out.println("Country [code= " + country[4] + " , name=" + country[5] + "]");
+                System.out.println("Successfully loaded game.");
+                System.out.println("Your character: ");
+                Hero.ReadStats();
 
             }
 
