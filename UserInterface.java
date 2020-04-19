@@ -17,12 +17,20 @@ public class UserInterface {
                 NewGameStart.IntroText();
             }
 
+            else if (userResponse.equalsIgnoreCase("SAVE")) {
+                SaveGame.Saving();
+            }
+
             else if (userResponse.equalsIgnoreCase("LOAD")) {
                 LoadGameStart.LoadGame();
             }
 
             else if (userResponse.equalsIgnoreCase("MENU")) {
                 MenuOptions.ListMenu();
+            }
+
+            else if (userResponse.equalsIgnoreCase("STORY")) {
+                Storyboard.Story();
             }
 
             else { System.out.println("Invalid command."); }

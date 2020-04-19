@@ -1,4 +1,5 @@
 public class Hero {
+
     private static String name = "None";
     private static int health = 0;
     private static int attack = 0;
@@ -18,21 +19,27 @@ public class Hero {
         System.out.println("Speed: " + speed);
     }
 
-    public static void getAbilities(String name) {
-        switch(name) {
-            case "Archer Squid":
-                System.out.println("Squid Attack 1: Ink Darts");
-                System.out.println("Squid Attack 2: Ink-Tipped Torpedo");
-                System.out.println("Squid Spell: Ink Cloud");
-            case "Warrior Crab":
-                System.out.println("Crab Attack 1: Double Claw Pinch");
-                System.out.println("Crab Attack 2: Crab Stab");
-                System.out.println("Crab Spell: Rangoon Confusion");
-            case "Assassin Starfish":
-                System.out.println("Starfish Attack 1: Sticky Spray");
-                System.out.println("Starfish Attack 2: Starfish Slam");
-                System.out.println("Starfish Spell: Camoflage");
+    public static void ReadName() {
+        System.out.print(name + ": ");
+    }
 
-        }
+    public static String returnName() {
+        String myname = name;
+        return myname;
+    }
+
+    public static int returnHealth() {
+        int myhealth = health;
+        return myhealth;
+    }
+
+    public static int returnAttack() {
+        int myattack = attack;
+        return myattack;
+    }
+
+    public static int returnSpeed() {
+        int myspeed = speed;
+        return myspeed;
     }
 }
