@@ -9,12 +9,11 @@ public class Storyboard extends CharacterCreator {
         // Chapter1(character), i get a "cannot find symbol" error.
         // we need to remove any hardcoded character names
         // -scott
-        Chapter1("Archer Squid");
     }
 
-    public static void Chapter1(String character) {
+    public static void Story(String character) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("CHAPTER 1\nSEARCHING FOR FOOD\n");
+        System.out.println("\n____________________\nCHAPTER 1\nSEARCHING FOR FOOD\n");
         try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": There's no food left here...");
         try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
@@ -28,7 +27,6 @@ public class Storyboard extends CharacterCreator {
             case 1:
                 // sleep
                 try { TimeUnit.SECONDS.sleep(3);} catch (InterruptedException e){e.printStackTrace();}
-                System.out.println("\n\n");
                 // crossroads chapter 1
                 System.out.println(character + ": Should I swim down to find food, or swim to another reef?");
                 try { TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
@@ -46,10 +44,7 @@ public class Storyboard extends CharacterCreator {
                 }
                 break;
             case 2:
-            // sleep
-            try { TimeUnit.SECONDS.sleep(3); 
-            } catch (InterruptedException e) {e.printStackTrace();}
-            break;       
+                break;       
         }
     }
     public static void Chapter1A(String character) {
