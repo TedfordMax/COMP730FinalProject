@@ -49,37 +49,110 @@ public class Storyboard extends CharacterCreator {
     }
     public static void Chapter1A(String character) {
         Scanner sc = new Scanner(System.in);
-        try { TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();}
+        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": These creatures are invading from all around.");
-        try { TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();}
+        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": It seems all the reefs are infested with them.");
-        try { TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();}
+        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": The only way to avoid them is to swim further down...");
-        try { TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();}
+        try{TimeUnit.SECONDS.sleep(2);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": AAAAH!");
-        try { TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();}
-        System.out.println(character + ": A SWORDFISH?");
-        try { TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();}
-        System.out.println("Swordfish: You have trespassed through my territory, young " + character);
-        // this still needs work
-        // How can we make this be able to call any character?
-        // i don't think it's good to hard-code a character name
-        // - scott
-        // PRINT ABILITIES
-        // ABILITIES SELECTION HERE
-        // PLAYER CHOOSES ABILITY
+        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Swordfish: YOU HAVE TRESPASSED UPON MY WATERS, YOUNG " + character.toUpperCase() + ".");
+        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Swordfish: PREPARE TO DIE.");
+        try{TimeUnit.SECONDS.sleep(2);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n*Swordfish initiates a charging maneuver, effectively stabbing " + character + "'s upper right region.*");        
+        try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
+        Hero.changeStats(character, "h", -1);
+        Hero.getAbilities(character);
+        System.out.println("Decide your move.");
+        int option = sc.nextInt();
+        switch(option) {
+            case 1:
+                System.out.println(character + ": You know who ya talkin' to?");
+                switch(character) {
+                    case "Archer Squid":
+                        System.out.println("*Hundreds of INK DARTS are thrown by the " + character + " and injures Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                    case "Crab Warrior": 
+                        System.out.println("*A powerful DOUBLE-CLAW PINCH is initiated by " + character + " and injures Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                    case "Assassin Starfish": 
+                        System.out.println("*A strong and smelly STICKY SPRAY is ejected by " + character + " and injures Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                }
+                break;
+            case 2:
+                System.out.println(character + ": Take this, slimy scum!");
+                switch(character) {
+                    case "Archer Squid":
+                        System.out.println("*An INK-TIPPED TOPEDO is launched by the " + character + " and injures Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                    case "Crab Warrior": 
+                        System.out.println("*A forceful CRAB STAB by " + character + " injures Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                    case "Assassin Starfish": 
+                        System.out.println("*" + character + " performs the STARFISH SLAM which effectively injures Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                }
+                break;
+            case 3:
+                System.out.println(character + ": We'll see about that, Mr. Stupidfish...");
+                switch(character) {
+                    case "Archer Squid":
+                        System.out.println("*An INK CLOUD by " + character + " Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                    case "Crab Warrior": 
+                        System.out.println("*A forceful CRAB STAB by " + character + " injures Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                    case "Assassin Starfish": 
+                        System.out.println("*" + character + " performs the STARFISH SLAM which effectively injures Swordfish.*");
+                        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                        Hero.changeStats("Swordfish", "h", -1);
+                        try{TimeUnit.SECONDS.sleep(1);}catch(InterruptedException e){e.printStackTrace();}
+                        System.out.println("Swordfish: YOU'LL HAVE TO BETTER THAN THAT TO DEFEAT ME, " + character.toUpperCase() + " SCUM.");
+                        break;
+                }
+                break;
+            Hero.getAbilities(character);
+            System.out.println("Decide your move.");
+            int option2 = sc.nextInt();
+            switch(option2) {
+
+        }
     }
     public static void Chapter1B(String character) {
         try { TimeUnit.SECONDS.sleep(3);
