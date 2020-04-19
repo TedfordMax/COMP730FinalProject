@@ -12,55 +12,31 @@ public class Hero {
         attack = a;
         speed = s;
     }
-    
-    public static String returnName() {
-        String myname = name;
-        return myname;
-    }
-
-    public static int returnHealth() {
-        int myhealth = health;
-        return myhealth;
-    }
-
-    public static int returnAttack() {
-        int myattack = attack;
-        return myattack;
-    }
-
-    public static int returnSpeed() {
-        int myspeed = speed;
-        return myspeed;
-    }
 
     public static void changeStats(String character, String stat, int amount) {
         switch(stat) {
             case "h":
-                System.out.println("\n" + character + "'s health changed by " + amount + ".");
+                System.out.println(character + "'s health changed by " + amount + ".");
                 switch (character) {
                     case "Archer Squid":
-                        System.out.println("\nYour new health is: ");
                         healthMonitor(character, amount);
                         break;
                     case "Warrior Crab":
-                        System.out.println("\nYour new health is: ");
                         healthMonitor(character, amount);
                         break;
                     case "Assassin Starfish":
-                        System.out.println("\nYour new health is: ");
                         healthMonitor(character, amount);
                         break;
                     case "Swordfish":
-                        System.out.println("\n" + character + "'s new health is: ");
                         healthMonitor(character, amount);
                         break;
                 }
                 break;
             case "a":
-                System.out.println("\nAttack changed by " + amount);
+                System.out.println("Attack changed by " + amount);
                 break;
             case "s":
-                System.out.println("\nSpeed changed by " + amount);
+                System.out.println("Speed changed by " + amount);
                 break;
         }
     }
