@@ -9,6 +9,9 @@ public class Storyboard extends CharacterCreator {
         // Chapter1(character), i get a "cannot find symbol" error.
         // we need to remove any hardcoded character names
         // -scott
+        
+        //when not in debug, use... 
+        //Storyboard.Story(Hero.returnName());
     }
 
     public static void Story(String character) {
