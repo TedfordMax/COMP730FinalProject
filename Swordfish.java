@@ -1,6 +1,6 @@
 import java.util.Random;
 public class Swordfish {
-    static int health = 5;
+    static int health = 6;
 
     public static void SwordfishStats() {
         System.out.println("Health: 5HP");
@@ -10,31 +10,30 @@ public class Swordfish {
 
     public static void getOffense() {
         System.out.println("(1) Attack: (+3) Upward Dive charge");
-        System.out.println("(2) Spell:  (+2) Sword Magic");
-        System.out.println("(3) Defend: (+1) Circle Swim");
+        System.out.println("(2)  Spell: (+2) Saline Slash");
+        System.out.println("(3) Defend:  (0) Circle Swim");
     }
 
     public static int Attacking() {
         Random rnd = new Random();
-        int AttackOp = rnd.nextInt(4);
+        int AttackOp = rnd.nextInt(3)+1;
         switch (AttackOp) {
             case 1:
-                System.out.println("Upward Dive charge");
                 return -2;
             case 2:
-                System.out.println("Sword Magic");
                 return -1;
             case 3:
-                System.out.println("Circle Swim");
                 return 0;
+            default:
+                int error = 0;
+                return error;
         }
-        int error = 0;
-        return error;
     }
 
     public static String AttackingString() {
         Random rnd = new Random();
-        int AttackOp = rnd.nextInt(4);
+        int AttackOp = rnd.nextInt(3)+1;
+        //System.out.println(AttackOp);
         switch (AttackOp) {
             case 1:
                 String offense1 = "Upward Dive charge";
@@ -45,9 +44,10 @@ public class Swordfish {
             case 3:
                 String offense3 = "Circle Swim";
                 return offense3;
+            default:
+                String error = "error";
+                return error;
         }
-        String error = "error";
-        return error;
     }
 
     public static int Attack(int change) {

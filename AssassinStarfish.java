@@ -1,5 +1,5 @@
 
-public class AssassinStarfish {
+public class AssassinStarfish implements CharacterInterface {
     public int health = 4;
     public int strength = 2;
     public int sentience = 3;

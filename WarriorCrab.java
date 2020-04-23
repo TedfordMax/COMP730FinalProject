@@ -1,5 +1,5 @@
 
-public class WarriorCrab implements Character {
+public class WarriorCrab implements CharacterInterface {
     public int health = 3;
     public int strength = 3;
     public int sentience = 2;

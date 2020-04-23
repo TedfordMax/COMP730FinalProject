@@ -1,5 +1,5 @@
 
-public class ArcherSquid implements Character {
+public class ArcherSquid implements CharacterInterface {
     public static int health = 4;
     public int strength = 2;
     public int sentience = 1;
