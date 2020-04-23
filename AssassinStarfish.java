@@ -1,34 +1,68 @@
 
 public class AssassinStarfish {
-    static int health = 2;
-    public static void CrabStats() {
-        System.out.println("Health: 2HP");
-        System.out.println("Attack: 1");
-        System.out.println("Speed:  3");
+    public int health = 4;
+    public int strength = 2;
+    public int sentience = 3;
+    public int attack = 1;
+    public int spell = 3;
+    public int xp = 0;
+    public void getStats() {
+        System.out.println("Health:    4\n");
+        System.out.println("Strength:  2\n");
+        System.out.println("Sentience: 3");
     }
-    public static void getOffense() {
+    public void getOffense() {
         System.out.println("(1) Attack: (-1) Starfish Slam");
         System.out.println("(2)  Spell: (-3) The Dirty Dan");
-        System.out.println("(3) Defend: (+2) Camouflage");
+        System.out.println("(3) Defend:  (0) Camouflage");
     }
-    public static int Attack(int change) {
-        int attack = 1 + change;
-        return attack;
+    public int Attacking(int option) {
+        switch (option) {
+            case 1:
+                return -1;
+            case 2:
+                return -3;
+            case 3:
+                return 0;
+            default:
+                int error = 0;
+                return error;
+        }
     }
-    public static int Spell(int change) {
-        int spell = 3 + change;
-        return spell;
+    public String AttackingString(int option) {
+        switch (option) {
+            case 1:
+                String attack = "Crab Stab";
+                return attack;
+            case 2:
+                String spell = "Rangoon Confusion";
+                return spell;
+            case 3:
+                String defend = "Shell";
+                return defend;
+            default:
+                String error = "error";
+                return error;
+        }
     }
-    public static int Defend(int change) {
-        int defend = 2 + change;
-        return defend;
-    }
-    public static int Health(int change) {
-        health = health + change;
+    public int Health(int change) {
+        health += change;
         return health;
     }
-    public static int Speed(int change) {
-        int speed = 3 + change;
-        return speed;
+    public int Strength(int change) {
+        strength += change;
+        return strength;
+    }
+    public int Attack(int change) {
+        attack += change;
+        return attack;
+    }
+    public int Spell(int change) {
+        spell += change;
+        return spell;
+    }
+    public int Sentience(int change) {
+        sentience += change;
+        return sentience;
     }
 }

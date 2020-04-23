@@ -60,30 +60,39 @@ public class Storyboard extends CharacterCreator {
         //try{TimeUnit.SECONDS.sleep(2);}catch(InterruptedException e){e.printStackTrace();}
         // Hero.healthMonitor("Swordfish", 0);
         //try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("\n____________________\nSHOWDOWN I: " + character.toUpperCase() + " VS. SWORDFISH\n");
+        System.out.println("\n____________________\nSHOWDOWN I: " + character.toUpperCase() + " VS. SWORDFISH");
         // System.out.println(character + ": You know who ya talkin' to?");
         // System.out.println(character + ": You can't handle my spell!");
         // System.out.println(character + ": We'll see about that, Mr. Stupidfish...");\
         switch(character) {
             case "Archer Squid":
                 while (Swordfish.health > 0 && ArcherSquid.health > 0) {
-                    System.out.println("SWORDFISH HP: " + Swordfish.Health(0));
-                    System.out.println("ARCHER SQUID HP: " + ArcherSquid.Health(0));
+                    System.out.println("\nSWORDFISH HP: " + Swordfish.Health(0));
+                    System.out.println("ARCHER SQUID HP: " + ArcherSquid.Health(0) + "\n");
                     ArcherSquid.getOffense();
                     System.out.println("\nARCHER SQUID'S MOVE.");
                     int decision1 = sc.nextInt();
                     if (decision1 == 3) {
-                        System.out.println("Archer Squid decides block by using " + ArcherSquid.AttackingString(decision1));
-                        System.out.println("Archer Squid replenishes " + ArcherSquid.Attacking(decision1) + " HP");
+                        System.out.println("Archer Squid decides block by using " + ArcherSquid.AttackingString(3));
+                        System.out.println("Archer Squid blocks  " + ArcherSquid.Attacking(3) + " HP.");
+
+                        System.out.println("\nSWORDFISH'S MOVE.");
+                        System.out.println("Swordfish decides to use " + Swordfish.AttackingString());
+                        System.out.println("Swordfish deals 0 damage to Archer Squid due to block.");
                     } else {
                         System.out.println("Archer Squid decides to use " + ArcherSquid.AttackingString(decision1));
+
                         int Damage = ArcherSquid.Attacking(decision1);
-                        System.out.println(character + " deals " + ArcherSquid.Attacking(decision1) + " damage against Swordfish");
+
+                        System.out.println(character + " deals " + ArcherSquid.Attacking(decision1) + " damage to Swordfish");
                         System.out.println("Swordfish HP: " + Swordfish.Health(Damage) + " (" + Damage + ")");
                         
                         System.out.println("\nSWORDFISH'S MOVE.");
                         System.out.println("Swordfish decides to use " + Swordfish.AttackingString());
-                        System.out.println("Swordfish deals " + Swordfish.Attacking() + " against Archer Squid");
+
+                        int playerDamage = Swordfish.Attacking();
+                        System.out.println("Swordfish deals " + playerDamage + " damage to Archer Squid");
+                        System.out.println("Archer Squid HP: " + ArcherSquid.Health(Damage) + " (" + Damage + ")");
                     }
                 }
                 break;
@@ -98,6 +107,7 @@ public class Storyboard extends CharacterCreator {
                 
                 break;
         }
+        System.out.println("Adding EXP!");
         // System.out.println("*Swordfish initiates a charging move*");
         //try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         // Random rnd = new Random();

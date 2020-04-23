@@ -1,65 +1,68 @@
 
-public class ArcherSquid {
-    static int health = 2;
-    public static String SquidStats() {
-        String Stats = "Health: 2\nAttack: 3\nSpeed:  1";
-        return Stats;
+public class ArcherSquid implements Character {
+    public static int health = 4;
+    public int strength = 2;
+    public int sentience = 1;
+    public int attack = 2;
+    public int spell = 3;
+    public int xp = 0;
+    public void getStats() {
+        System.out.println("Health:    3\n");
+        System.out.println("Strength:  2\n");
+        System.out.println("Sentience: 1");
     }
-    public static void getOffense() {
+    public void getOffense() {
         System.out.println("(1) Attack: (-2) Ink-Tipped Torpedo");
         System.out.println("(2)  Spell: (-3) Ink Cloud");
-        System.out.println("(3) Defend: (+1) Tentacle Block");
+        System.out.println("(3) Defend: (0) Tentacle Block");
     }
-    public static int Attacking(int option) {
+    public int Attacking(int option) {
         switch (option) {
             case 1:
                 return -2;
             case 2:
                 return -3;
             case 3:
-                return 1;
+                return 0;
+            default:
+                int error = 0;
+                return error;
         }
-        int error = 0;
-        return error;
     }
-    public static String AttackingString(int option) {
+    public String AttackingString(int option) {
         switch (option) {
             case 1:
-                String offense1 = "Ink-Tipped Torpedo";
-                return offense1;
+                String attack = "Ink-Tipped Torpedo";
+                return attack;
             case 2:
-                String offense2 = "Ink Cloud";
-                return offense2;
+                String spell = "Ink Cloud";
+                return spell;
             case 3:
-                String offense3 = "Tentacle Block";
-                return offense3;
+                String defend = "Tentacle Block";
+                return defend;
+            default:
+                String error = "error";
+                return error;
         }
-        String error = "error";
-        return error;
     }
-
-    public static int Attack(int change) {
-        int attack = 2;
-        attack =+ change;
-        return attack;
-    }
-    public static int Spell(int change) {
-        int spell = 3;
-        spell =+ change;
-        return spell;
-    }
-    public static int Defend(int change) {
-        int defend = -1;
-        defend =+ change;
-        return defend;
-    }
-    public static int Health(int change) {
-        health = health + change;
+    public int Health(int change) {
+        health += change;
         return health;
     }
-    public static int Speed(int change) {
-        int speed = 1;
-        speed =+ change;
-        return speed;
+    public int Strength(int change) {
+        strength += change;
+        return strength;
+    }
+    public int Attack(int change) {
+        attack += change;
+        return attack;
+    }
+    public int Spell(int change) {
+        spell += change;
+        return spell;
+    }
+    public int Sentience(int change) {
+        sentience += change;
+        return sentience;
     }
 }
