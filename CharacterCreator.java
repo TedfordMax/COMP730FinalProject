@@ -1,13 +1,13 @@
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class CharacterCreator {
-
-    public static void CharacterSelection() {
-
+    public static String character;
+	public static void CharacterSelection() {
         System.out.println("Please select a character.\n");
-        System.out.println("(1) Archer Squid: \n    Health: 2\n    Attack: 3 (+1)\n    Speed: 2");
-        System.out.println("(2) Warrior Crab: \n    Health: 3 (+1)\n    Attack: 2\n    Speed: 2");
-        System.out.println("(3) Assassin Starfish: \n    Health: 2\n    Attack: 2\n    Speed: 3 (+1)");
+        System.out.println("(1) Archer Squid (Favoring Attack): \n    Health: 2\n    Attack: 3 (+1)\n    Speed: 2");
+        System.out.println("(2) Warrior Crab (Favoring Health): \n    Health: 3 (+1)\n    Attack: 2\n    Speed: 2");
+        System.out.println("(3) Assassin Starfish (Favoring Speed): \n    Health: 2\n    Attack: 2\n    Speed: 3 (+1)");
 
         Scanner in = new Scanner(System.in);
         String character = in.nextLine();
@@ -15,24 +15,37 @@ public class CharacterCreator {
         switch (character) {
             case "1":
                 character = "Archer Squid";
-                System.out.println("You have selected " + character);
+                System.out.println("You will play as " + character);
+                //try{TimeUnit.SECONDS.sleep(1);}catch (InterruptedException e){e.printStackTrace();}
                 Hero Squid = new Hero(character, 2, 3, 2);
-                System.out.println(Squid);
+                //try{TimeUnit.SECONDS.sleep(1);}catch (InterruptedException e){e.printStackTrace();}
+                System.out.println(character + " abilities: ");
                 Hero.getAbilities(character);
+                //try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
+                Storyboard.Story(character);
                 break;
             case "2":
                 character = "Warrior Crab";
-                System.out.println("You have selected " + character);
+                System.out.println("You will play as " + character);
+                try{TimeUnit.SECONDS.sleep(1);}catch (InterruptedException e){e.printStackTrace();}
                 Hero Crab = new Hero(character, 3, 2, 2);
-                System.out.println(Crab);
+                try{TimeUnit.SECONDS.sleep(1);}catch (InterruptedException e){e.printStackTrace();}
+                System.out.println(character + " abilities: ");
                 Hero.getAbilities(character);
+                try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
+                Storyboard.Story(character);
                 break;
             case "3":
                 character = "Assassin Starfish";
-                System.out.println("You have selected " + character);
+                try{TimeUnit.SECONDS.sleep(1);}catch (InterruptedException e){e.printStackTrace();}
+                System.out.println("You will play as " + character);
+                try{TimeUnit.SECONDS.sleep(1);}catch (InterruptedException e){e.printStackTrace();}
                 Hero Starfish = new Hero(character, 2, 2, 3);
-                System.out.println(Starfish);
+                try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
+                System.out.println(character + " abilities: ");
                 Hero.getAbilities(character);
+                try{TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
+                Storyboard.Story(character);
                 break;
         }               
     }
