@@ -1,161 +1,117 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class Combat extends Character {
-	Scanner in = new Scanner(System.in);
-	Character user = new Character();
-	Swordfish enemy = new Swordfish();
-	Random rand = new Random();
+public class Combat {
+	static Scanner in = new Scanner(System.in);
+	static Character user = new Character();
+	static Swordfish enemy = new Swordfish();
+	static Random rand = new Random();
+	static String b1 = "True";
 	
-	public void UserCombat() {
+	
+
+	@SuppressWarnings("static-access")
+	public static void UserCombat() {
+		while (b1 == "True") {
 		System.out.println("Type in the first of the three combat abilities you want to use this combat phase. Use 1, 2, or 3.");
 		String a = in.nextLine();
-		if (a == "1");
-		user.Attack1();
+		if (a.equals("1")) {
+			
+		System.out.println("You use" + Character.Attack1 + " dealing " + Character.Attack + " damage.");
 		enemy.Health = enemy.Health - Character.Attack;
-			if (enemy.Health == 0)
-				System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		if (a == "2");
-			user.Attack2();
-			if (enemy.Health == 0)
-				System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		if (a == "3");
-			user.Attack3();
-			if (enemy.Health == 0)
-				System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		System.out.println("Type in the second of the three combat abilities you want to use this combat phase.");
-		int randomInt = rand.nextInt(4);
-		if (randomInt == 1) {
+		}
+		
+		if (a.equals("2")) {
+			
+		Character.Attack2();
+		}
+		if (a.equals("3"))  {
+			
+			Character.Attack3();
+		}
+		int randomInt = rand.nextInt(3);
+		if (randomInt == 0) {
 			enemy.Attack1();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
+			Character.Health = Character.Health - enemy.Attack;
+		}
+		else if (randomInt == 1) {
+			enemy.Attack2();
 		}
 		else if (randomInt == 2) {
-			enemy.Attack2();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-		}
-		else if (randomInt == 3) {
 			enemy.Attack3();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
 		}
+		System.out.println("Your health = " + Character.Health);
+		System.out.println("enemy health = " + enemy.Health);
+		
+		System.out.println("Type in the second of the three combat abilities you want to use this combat phase.");
 		String b = in.nextLine();
-		if (b == "1");
-			user.Attack1();
-			if (enemy.Health == 0)
-				System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		if (b == "2");
-			user.Attack2();
-			if (enemy.Health == 0)
-				System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		if (b == "3");
-			user.Attack3();
-			if (enemy.Health == 0)
-				System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		System.out.println("Type in the third of the three combat abilities you want to use this combat phase.");
-		int randomInt2 = rand.nextInt(4);
-		if (randomInt2 == 1) {
+		if (b.equals("1")) {
+				
+			System.out.println("You use" + Character.Attack1 + " dealing " + Character.Attack + " damage.");
+			enemy.Health = enemy.Health - Character.Attack;	
+		}
+		if (b.equals("2")) {
+			
+			Character.Attack2();
+		}	
+		if (b.equals("3")) {
+			
+			Character.Attack3();
+		}	
+		int randomInt2 = rand.nextInt(3);
+		if (randomInt2 == 0) {
 			enemy.Attack1();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
+			Character.Health = Character.Health - enemy.Attack;
+		}
+		else if (randomInt2 == 1) {
+			enemy.Attack2();
 		}
 		else if (randomInt2 == 2) {
-			enemy.Attack2();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-		}
-		else if (randomInt2 == 3) {
 			enemy.Attack3();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
 		}
+		System.out.println("Your health = " + Character.Health);
+		System.out.println("enemy health = " + enemy.Health);
+		
+		System.out.println("Type in the third of the three combat abilities you want to use this combat phase.");
 		String c = in.nextLine();
-		if (c == "1");
-		user.Attack1();
-		if (enemy.Health == 0)
-			System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		if (c == "2");
-			user.Attack2();
-			if (enemy.Health == 0)
-				System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		if (c == "3");
-			user.Attack3();
-			if (enemy.Health == 0)
-				System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
-		int randomInt3 = rand.nextInt(4);
-		if (randomInt3 == 1) {
+		if (c.equals("1"))  {
+			System.out.println("You use" + Character.Attack1 + " dealing " + Character.Attack + " damage.");
+		enemy.Health = enemy.Health - Character.Attack;
+		}
+		
+		if (c.equals("2")) {
+			Character.Attack2();
+		}
+		if (c.equals("3")) {
+			Character.Attack3();
+		}
+		int randomInt3 = rand.nextInt(3);
+		if (randomInt3 == 0) {
 			enemy.Attack1();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
+			Character.Health = Character.Health - enemy.Attack;
+		}
+		else if (randomInt3 == 1) {
+			enemy.Attack2();
 		}
 		else if (randomInt3 == 2) {
-			enemy.Attack2();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-		}
-		else if (randomInt3 == 3) {
 			enemy.Attack3();
-			if (Character.Health == 0)
-				System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
+		}
+		System.out.println("Combat round over.");
+		System.out.println("Your health = " + Character.Health);
+		System.out.println("enemy health = " + enemy.Health);
+		if (Character.Health < enemy.Health) {
+			enemy.DefeatLine();
+			System.out.println("You've been defeated, please start again or load from last save.");
+			b1 = "False";
+			//Storyboard.Chapter2(b);
 		}
 		if (Character.Health >= enemy.Health) {
-			System.out.println("Swordfish: Oooh, you've respectfully defeated me, allow me to sink to my end in peace.");
+			enemy.VictoryLine();
+			System.out.println("You've defeated the Swordfish!");
+			b1 = "False";
 		}
-		if (Character.Health < enemy.Health) {
-			System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-		}
+	  }
 	}
-//		public void EnemyCombat() {
-//			int randomInt = (int)(3 * Math.random());
-//			if (randomInt == 1) {
-//				enemy.Attack1();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//			else if (randomInt == 2) {
-//				enemy.Attack2();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//			else if (randomInt == 3) {
-//				enemy.Attack3();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//			int randomInt2 = (int)(3 * Math.random());
-//			if (randomInt2 == 1) {
-//				enemy.Attack1();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//			else if (randomInt2 == 2) {
-//				enemy.Attack2();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//			else if (randomInt2 == 3) {
-//				enemy.Attack3();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//			int randomInt3 = (int)(3 * Math.random());
-//			if (randomInt3 == 1) {
-//				enemy.Attack1();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//			else if (randomInt3 == 2) {
-//				enemy.Attack2();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//			else if (randomInt3 == 3) {
-//				enemy.Attack3();
-//				if (user.health == 0)
-//					System.out.println("Swordfish: Please understand, I hold you in the highest respect.");
-//			}
-//	}	
+  }
+
 	
-}
- 	
