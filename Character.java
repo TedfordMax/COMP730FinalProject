@@ -1,9 +1,9 @@
 
 public class Character {
 	
-	static public int Attack;
-	static public int Sentience;
-	static public int Health;
+	public static int Attack;
+	public static int Sentience;
+	public static int Health;
 	public static String Attack1;
 	public static String Attack2;
 	public static String Attack3;
