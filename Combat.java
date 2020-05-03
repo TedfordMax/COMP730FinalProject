@@ -3,7 +3,6 @@ import java.util.Random;
 
 public class Combat {
 	static Scanner in = new Scanner(System.in);
-	static Character user = new Character();
 	static Swordfish enemy = new Swordfish();
 	static Random rand = new Random();
 	static String b1 = "True";
@@ -12,13 +11,14 @@ public class Combat {
 
 	@SuppressWarnings("static-access")
 	public static void UserCombat() {
+		Character.getItemStats();
 		while (b1 == "True") {
 		System.out.println("Type in the first of the three combat abilities you want to use this combat phase. Use 1, 2, or 3.");
 		String a = in.nextLine();
 		if (a.equals("1")) {
 			
-		System.out.println("You use" + Character.Attack1 + " dealing " + Character.Attack + " damage.");
-		enemy.Health = enemy.Health - Character.Attack;
+		System.out.println("You use " + Character.Attack1 + " dealing " + Character.Attack + " damage.");
+		enemy.Health = Character.Attack - enemy.Health;
 		}
 		
 		if (a.equals("2")) {
@@ -47,8 +47,8 @@ public class Combat {
 		String b = in.nextLine();
 		if (b.equals("1")) {
 				
-			System.out.println("You use" + Character.Attack1 + " dealing " + Character.Attack + " damage.");
-			enemy.Health = enemy.Health - Character.Attack;	
+			System.out.println("You use" + Character.Attack1 + " dealing " + (Character.Attack + Character.WeaponStats) + " damage.");
+			enemy.Health = Character.Attack - enemy.Health;	
 		}
 		if (b.equals("2")) {
 			
@@ -76,7 +76,7 @@ public class Combat {
 		String c = in.nextLine();
 		if (c.equals("1"))  {
 			System.out.println("You use" + Character.Attack1 + " dealing " + Character.Attack + " damage.");
-		enemy.Health = enemy.Health - Character.Attack;
+			enemy.Health = Character.Attack - enemy.Health;
 		}
 		
 		if (c.equals("2")) {
@@ -102,16 +102,38 @@ public class Combat {
 		if (Character.Health < enemy.Health) {
 			enemy.DefeatLine();
 			System.out.println("You've been defeated, please start again or load from last save.");
-			b1 = "False";
-			//Storyboard.Chapter2(b);
 		}
 		if (Character.Health >= enemy.Health) {
 			enemy.VictoryLine();
 			System.out.println("You've defeated the Swordfish!");
+			int randomIntW = rand.nextInt(2);
+			if (randomIntW == 0) {				
+				System.out.println("You found Sword of Barnacles! It gives you 1 attack.");
+				System.out.println("You may only have one weapon at a time.  Would you like to keep Sword of Barnacles or keep your current weapon?");
+				System.out.println("Press 1 to keep Sword of Barnacles, press 2 to remain with current weapon.");
+				String d = in.nextLine();
+				if (d.equals("1")) {
+				Character.WeaponItem("Sword of Barnacles", 1, 1);	
+					}
+				}
+			if (randomIntW == 1) {
+				System.out.println("You have found Shoal Armor! It gives you 2 health.");
+				System.out.println("You may only have one armor at a time.  Would you like to keep Shoal Armor or keep your current armor?");
+				System.out.println("Press 1 to keep Shoal Armor, press 2 to remain with current armor.");
+				String e = in.nextLine();
+				if (e.equals("1")) {
+				Character.ArmorItem("Shoal Armor", 2, 0);	
+					}	
+				}
+			
+				b1 = "False";
+				//Storyboard.Chapter2(b);
+				}
+			
+			}
 			b1 = "False";
 		}
 	  }
-	}
-  }
+  
 
 	
