@@ -1,15 +1,22 @@
+import java.lang.reflect.Array;
 
 public class Character {
 	
-	public static int Attack;
-	public static int Sentience;
-	public static int Health;
+	static public int Attack;
+	static public int Sentience;
+	static public int Health;
 	public static String Attack1;
 	public static String Attack2;
 	public static String Attack3;
 	public static String VictorySpeech;
 	public static String DefeatSpeech;
-	
+	public static Integer XP;
+	public static String WeaponName;
+	public static Integer WeaponStats;
+	public static Integer WeaponSentience;
+	public static String ArmorName;
+	public static Integer ArmorStats;
+	public static Integer ArmorSentience;	
 	    
     public static void getStats() {
     	System.out.println("Attack = " + Attack);
@@ -58,6 +65,28 @@ public class Character {
 	public void DefeatLine() {
 		System.out.println(DefeatSpeech);
 	}
-	public void takeDamage() {
+	public static void WeaponItem(String newWeaponName, Integer newWeaponStats, Integer newWeaponSentience) {
+		WeaponName = newWeaponName;
+		WeaponStats = newWeaponStats;
+		WeaponSentience = newWeaponSentience;
+	}
+	public static void ArmorItem(String newArmorName, Integer newArmorStats, Integer newArmorSentience ){
+		ArmorName = newArmorName;
+		ArmorStats = newArmorStats;
+		ArmorSentience = newArmorSentience;
+	}
+	public void QuestItem(String newQuestItem) {
+		String questItem1 = " ";
+		String questItem2 = " ";
+		String questItem3 = " ";
+	}
+	public static void getItemStats() {
+		Attack = Attack + ArmorStats;
+		Health = Health + ArmorStats;
+		Sentience = Sentience + WeaponSentience + ArmorSentience;
+	}
+	public static void checkItems() {
+		System.out.println("Weapon: " + WeaponName + " Increases Attack by: " + WeaponStats);
+		System.out.println("Armor: " + ArmorName + " Increses Health by: " + ArmorStats);
 	}
 }
