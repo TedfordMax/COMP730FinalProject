@@ -1,11 +1,20 @@
 
 public class ArcherSquid extends Character {
-	static public int Attack = 3;
+	static public int Attack = 2;
 	static public int Sentience = 2;
 	static public int Health = 3;
 	static public String Attack1 = "Ink-tipped Torpedo";
 	public static String Attack2 = "Ink Squirt";
 	static public String Attack3 = "Tentacle Block";
+	public static String VictorySpeech = "I win";
+	public static String DefeatSpeech = "I lose";
+	public static Integer XP = 0;
+	public static String WeaponName = "";
+	public static Integer WeaponStats = 0;
+	public static Integer WeaponSentience = 0;
+	public static String ArmorName = "";
+	public static Integer ArmorStats = 0;
+	public static Integer ArmorSentience = 0;
   
     public static void getStats() {
     	System.out.println("Attack = " + Attack);
@@ -35,6 +44,15 @@ public class ArcherSquid extends Character {
 		Character.Attack1 = Attack1;
 		Character.Attack2 = Attack2;
 		Character.Attack3 = Attack3;
+		Character.VictorySpeech = "I win";
+		Character.DefeatSpeech = "I lose";
+		Character.XP = 0;
+		Character.WeaponName = "";
+		Character.WeaponStats = 0;
+		Character.WeaponSentience = 0;
+		Character.ArmorName = "";
+		Character.ArmorStats = 0;
+		Character.ArmorSentience = 0;
 		
 	}
 }
