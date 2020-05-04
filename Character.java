@@ -81,10 +81,17 @@ public class Character {
 		String questItem3 = " ";
 	}
 	public static void getItemStats() {
-		Attack = Attack + ArmorStats;
+		Attack = Attack + WeaponStats;
 		Health = Health + ArmorStats;
 		Sentience = Sentience + WeaponSentience + ArmorSentience;
 	}
+	public static void levelUp() {
+		if (XP == 10) {
+		Attack = Attack + 2;
+		Health = Health + 5;
+		Sentience = Sentience + 2;
+		}
+	}	
 	public static void checkItems() {
 		System.out.println("Weapon: " + WeaponName + " Increases Attack by: " + WeaponStats);
 		System.out.println("Armor: " + ArmorName + " Increses Health by: " + ArmorStats);
