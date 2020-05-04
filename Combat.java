@@ -18,7 +18,7 @@ public class Combat {
 		if (a.equals("1")) {
 			
 		System.out.println("You use " + Character.Attack1 + " dealing " + Character.Attack + " damage.");
-		enemy.Health = Character.Attack - enemy.Health;
+		enemy.Health = enemy.Health - Character.Attack;	
 		}
 		
 		if (a.equals("2")) {
@@ -48,7 +48,7 @@ public class Combat {
 		if (b.equals("1")) {
 				
 			System.out.println("You use" + Character.Attack1 + " dealing " + (Character.Attack + Character.WeaponStats) + " damage.");
-			enemy.Health = Character.Attack - enemy.Health;	
+			enemy.Health = enemy.Health - Character.Attack;	
 		}
 		if (b.equals("2")) {
 			
@@ -76,7 +76,7 @@ public class Combat {
 		String c = in.nextLine();
 		if (c.equals("1"))  {
 			System.out.println("You use" + Character.Attack1 + " dealing " + Character.Attack + " damage.");
-			enemy.Health = Character.Attack - enemy.Health;
+			enemy.Health = enemy.Health - Character.Attack;
 		}
 		
 		if (c.equals("2")) {
@@ -105,7 +105,12 @@ public class Combat {
 		}
 		if (Character.Health >= enemy.Health) {
 			enemy.VictoryLine();
-			System.out.println("You've defeated the Swordfish!");
+			System.out.println("You've defeated the Swordfish, you gained 5XP!");
+			Character.XP = Character.XP + 5;
+			Character.levelUp();
+			if (Character.XP == 10) {
+				System.out.println("You leveled up! Your attack and sentience has been increased by 2 and you gained 5 health!");
+			}
 			int randomIntW = rand.nextInt(2);
 			if (randomIntW == 0) {				
 				System.out.println("You found Sword of Barnacles! It gives you 1 attack.");
@@ -127,7 +132,8 @@ public class Combat {
 				}
 			
 				b1 = "False";
-				//Storyboard.Chapter2(b);
+				
+				Storyboard.Chapter2A(CharacterCreator.character);
 				}
 			
 			}
