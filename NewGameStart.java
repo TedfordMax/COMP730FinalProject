@@ -1,6 +1,7 @@
 public class NewGameStart {
 
     public static void IntroText() {
+        /**
         System.out.print("Welcome to the Pacific Ocean! The once vast seas are becoming ");
         System.out.print("crowded with pollution and plastic, forcing sea life down into the "); 
         System.out.print("cracks of the sea-floor to survive, what was once a barren and "); 
@@ -11,9 +12,14 @@ public class NewGameStart {
         System.out.print("who can survive the strongest of blows, or a crab who has strong ");
         System.out.println("claws and a tough shell?");
         NewGame();
+        */
+
+        System.out.println("Debug mode - Intro text.");
+        NewGame();
     }
 
     public static void NewGame() {
+        System.out.println("Debug mode - Moving into CharacterSelection.java");
         CharacterCreator.CharacterSelection();
     }
 }

@@ -24,6 +24,7 @@ public class MenuOptions {
     }
 
     public static void ListStats() {
-        Hero.ReadStats();
+        Hero h = new Hero();
+        h.getStats();
     }
 }
