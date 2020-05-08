@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import sun.net.www.content.text.plain;
 
 public class Story {
 
@@ -16,6 +17,11 @@ public class Story {
                 Chapter3(h);
                 break;
         }    
+    }
+
+    public static void Save(Hero h) {
+        SaveGame.Saving(StoryTracker);
+        System.out.println(StoryTracker);
     }
 
     public static void Chapter1(Hero h) {

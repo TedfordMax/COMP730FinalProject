@@ -24,7 +24,7 @@ public class MenuOptions {
     }
 
     public static void ListStats() {
-        Hero h = new Hero();
+        Hero h = new Hero("hhh", 1, 1, 1);
         h.getStats();
     }
 }

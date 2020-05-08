@@ -1,4 +1,4 @@
-public class Hero implements Character {
+public class Hero {
 
     private static String name = "None";
     private static int health = 0;
@@ -19,16 +19,40 @@ public class Hero implements Character {
         System.out.println("Speed: " + speed);
     }
 
-    public int returnHealth() {
+    public static String returnName() {
+        return name;
+    }
+
+    public static int returnHealth() {
         return health;
     }
 
-    public int returnAttack() {
+    public static int returnAttack() {
         return attack;
     }
 
+    public static int returnSpeed() {
+        return speed;
+    }
+
+    public static void setName(String n) {
+        name = n;
+    }
+
+    public static void setHealth(int h) {
+        health = h;
+    }
+
+    public static void setAttack(int a) {
+        attack = a;
+    }
+
+    public static void setSpeed(int s) {
+        speed = s;
+    }
+
     public void Attack1() {
-        System.out.println("Debug mode - Attack 1, enemy user attack, does 3 damage.");
+        System.out.println("Debug mode - Attack 1, user attack, does (attack) damage.");
     }	
     
     public void Attack2() {
