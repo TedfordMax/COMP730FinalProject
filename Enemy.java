@@ -1,29 +1,22 @@
-public class Hero {
+public class Enemy {
 
     private static String name = "None";
     private static int health = 0;
     private static int attack = 0;
     private static int speed = 0;
 
-    public Hero(String n, int h, int a, int s) {
+    public Enemy(String n, int h, int a, int s) {
         name = n;
         health = h;
         attack = a;
         speed = s;
     }
 
-    public void getStats() {
-        System.out.println(name);
-        System.out.println("Health: " + health);
-        System.out.println("Attack: " + attack);
-        System.out.println("Speed: " + speed);
-    }
-
     public String returnName() {
         return name;
     }
 
-    public int returnHealth() { // needs to be static to work with saving, could make another method if necessary
+    public int returnHealth() {
         return health;
     }
 
@@ -51,28 +44,28 @@ public class Hero {
         speed = s;
     }
 
-    public void takeDamage(Enemy e) {
-        health = health - e.returnAttack();
+    public void takeDamage(Hero player) {
+        health = health - player.returnAttack();
     }
 
-    public void Attack1() {
-        System.out.println("Debug mode - Attack 1, user attack, does (attack) damage.");
+    public void Attack1() {            // use switch cases with 'name' variable as the case to determine attacks based on enemy
+        System.out.println("Debug mode - Attack 1, enemy attack, does (attack) damage.");
     }	
     
     public void Attack2() {
-        System.out.println("Debug mode - Attack 2, user attack +2.");
+        System.out.println("Debug mode - Attack 2, enemy attack +2.");
     	attack = attack + 2;
     }
 
     public void Attack3() {
-        System.out.println("Debug mode - Attack 3, user health +2.");
+        System.out.println("Debug mode - Attack 3, enemy health +2.");
     	health = health + 2;
     }
 
     public void VictoryLine() {
         System.out.println("Debug mode - User win.");
     }
-    public void DefeatLine() {
+    public void DefeatLine() {      // ditto about switch cases, lots of code but more efficient in long run
         System.out.println("Debug mode - User lose.");
     }
 }

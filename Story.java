@@ -24,18 +24,20 @@ public class Story {
         System.out.println(StoryTracker);
     }
 
-    public static void Chapter1(Hero h) {
+    public static void Chapter1(Hero player) {
         System.out.println("Debug mode - In Story.java, Chapter 1.");
-        CombatImproved.UserCombat(h);
+        System.out.println(player.returnName());
         StoryTracker = 2;
     }
 
-    public static void Chapter2(Hero h) {
+    public static void Chapter2(Hero player) {
         System.out.println("Debug mode - In Story.java, Chapter 2.");
+        Enemy Swordfish = new Enemy("Swordfish", 10, 1, 1);
+        CombatImproved.UserCombat(player, Swordfish);
         StoryTracker = 3;
     }
 
-    public static void Chapter3(Hero h) {
+    public static void Chapter3(Hero player) {
         System.out.println("Debug mode - In Story.java, Chapter 3.");
         //StoryTracker = 3;
     }
