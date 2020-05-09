@@ -8,13 +8,19 @@ public class Storyboard extends CharacterCreator {
 
     public static void Chapter1(String character) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("CHAPTER 1\nSEARCHING FOR FOOD\n");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 1\nSEARCHING FOR FOOD\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println(character + ": There's no food left here...");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": Ever since the Black Water appeared nearby, The Waterloon Reef has so many new sealife!");
         Crossroads(character, 1);
-        
     }
     public static void Crossroads(String character, int chapter) {
         Scanner sc = new Scanner(System.in);
@@ -25,7 +31,7 @@ public class Storyboard extends CharacterCreator {
                 // crossroads chapter 1
                 System.out.println(character + ": Should I swim down to find food, or swim to another reef?");
                 //try { TimeUnit.SECONDS.sleep(3);}catch (InterruptedException e){e.printStackTrace();}
-                System.out.println("(1) If you swim down, you have to fight a swordfish.\n(2) If you swim to a nearby reef, you have to fight humans who are cleaning up an oil spill.\n(3) GrubShop");
+                System.out.println("(1) If you swim down, you have to fight a swordfish.\n(2) If you swim to a nearby reef, you have to fight humans who are cleaning up an oil spill.");
                 int option = sc.nextInt();
                 switch(option) {
                     case 1:
@@ -56,12 +62,48 @@ public class Storyboard extends CharacterCreator {
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": The only way to avoid them is to swim further down...");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + ": AAAAH!");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + ": A SWORDFISH?");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("Swordfish: You have trespassed through my territory, young " + character + " prepare to die.");
-        Combat.UserCombat();
+        System.out.println("(1) Investigate the Anemone.");
+        System.out.println("(2) Swim around and hang out for a bit.");
+        System.out.println("(3) Swim further down.");
+        int meter100 = sc.nextInt();
+        switch (meter100) {
+            case 1:
+                System.out.println(character + ": I see three Sea Anemones, which one should I investigate?");
+                System.out.println("(4) Sea Anemone");
+                System.out.println("(5) Sea Anemone");
+                System.out.println("(6) Sea Anemone");
+                System.out.print("Choice: ");
+                int anemone = sc.nextInt();
+                switch (anemone) {
+                    case 4:
+                        System.out.println(character + ": I found Kelp!");
+                        Chapter2B(character);
+                        break;
+                    case 5:
+                        System.out.println(character + ": Nothing in here.");
+                        Chapter2B(character);
+                        break;
+                    case 6:
+                        System.out.println(character + ": I found Seaweed!");
+                        Chapter2B(character);
+                        break;
+                    default:
+                        System.out.println("Try selecting one of the options.\n");
+                        break;
+                }
+                break;
+            case 2:
+                System.out.println(character + ": Just chillin...");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                Chapter2B(character);
+            case 3:
+                System.out.println(character + ": AAAAH!");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println(character + ": A SWORDFISH?");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println("Swordfish: You have trespassed through my territory, young " + character + " prepare to die.");
+                Chapter2B(character);
+        }
     }
 
     public static void Chapter1B(String character) {
@@ -130,7 +172,15 @@ public class Storyboard extends CharacterCreator {
  
     public static void Chapter2A(String character) {
     	Scanner sc = new Scanner(System.in);
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 2\nSWORDFISH\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println(character + ": Wow what were those creatures!! They've been everywhere since the black water appeared, maybe they caused it?");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": I can't stay in this part of the water I need to dive down to get away from those creatures.");
@@ -144,18 +194,34 @@ public class Storyboard extends CharacterCreator {
 
     public static void Chapter2B(String character) {
     	Scanner sc = new Scanner(System.in);
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 2\nPIRANHA\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println(character + ": I'm still bleeding a little but I should just keep swimming");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": It's getting dark really fast, I didn't think I was was going that fast");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(": As you look up you notice a dark cloud coming at you");
+        System.out.println("As you look up you notice a dark cloud coming at you");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("Piranha: Hey that fish is where the bloods coming from, get him!");
     }
     public static void Chapter2C(String character) {	
         Scanner sc = new Scanner(System.in);
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 2\nSCARY CREATURES\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println(character + ": Hopefully there's something in this cave that can help!");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": Even if it just works as a hiding spot.");
@@ -166,16 +232,49 @@ public class Storyboard extends CharacterCreator {
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": Let's dive down!");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + ": Huh it's getting a lot darker here than I thought it would");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + "*Looks up* : It's not getting darker, there's something above me!");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("Piranha: Mmm.. there is he boys, the injured fish, lets get 'em!");
-        Chapter3B(character);
+        System.out.println("(1) Investigate the Anemone.");
+        System.out.println("(2) Swim further down.");
+        int choice1 = sc.nextInt();
+        switch (choice1) {
+            case 1:
+                System.out.println(character + ": I see two Sea Anemones, which one should I investigate?");
+                System.out.println("(3) Sea Anemone");
+                System.out.println("(4) Sea Anemone");
+                int anemone = sc.nextInt();
+                switch (anemone) {
+                    case 3:
+                        System.out.println(character + ": I found Kelp!");
+                        break;
+                    case 4:
+                        System.out.println(character + ": I found a Sea Cucumber!");
+                        break;
+                    default:
+                        System.out.println("Try selecting one of the options.\n");
+                        break;
+                }
+                break;
+            case 2: 
+                System.out.println(character + ": Huh it's getting a lot darker here than I thought it would");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println(character + "*Looks up* : It's not getting darker, there's something above me!");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println("Piranha: Mmm.. there is he boys, the injured fish, lets get 'em!");
+                Chapter3B(character);
+                break;
+        }
+        
     }
     public static void Chapter3A(String character) {
         Scanner sc = new Scanner(System.in);
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 3\nJIMBO\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println(character + ": Wow that was a close call, what is a swordfish even doing this deep?");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("Jimbo the " + character + ": Hey you, " + character + "I just saw you fight off the swordfish!");
@@ -196,12 +295,44 @@ public class Storyboard extends CharacterCreator {
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("Jimbo the " + character + ": Well I was going to use this diving suit to wake it myself but you’re a lot stronger than me, you take it!");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + ": Receieved a diving suit, you can now further down!");
-        Chapter3B(character);
-        }
+        System.out.println(character + " receieved a diving suit, you can now further down!");
+        System.out.println("(1) Investigate the Anemone.");
+        System.out.println("(2) Swim further down.");
+        int choice1 = sc.nextInt();
+        switch (choice1) {
+            case 1:
+                System.out.println(character + ": I see two Sea Anemones, which one should I investigate?");
+                System.out.println("(3) Sea Anemone");
+                System.out.println("(4) Sea Anemone");
+                int anemone = sc.nextInt();
+                switch (anemone) {
+                    case 3:
+                        System.out.println(character + ": Nothing in here.");
+                        break;
+                    case 4:
+                        System.out.println(character + ": Nothing in here.");
+                        break;
+                    default:
+                        System.out.println("Try selecting one of the options.\n");
+                        break;
+                }
+                break;
+            case 2: 
+                Chapter3B(character);
+                break;
+            }
+    }
      public static void Chapter3B(String character) {
         Scanner sc = new Scanner(System.in);
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 3\nDARK TRENCH\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println(character + ": Now that I can breathe this deep it's time go down into the trench");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": Wow it's really dark down in this trench, I can't see anything, how will I find a sleeping fish like this?");
@@ -210,38 +341,101 @@ public class Storyboard extends CharacterCreator {
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": Oh crap it's an anglerfish! It's going to try and eat me!");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + " Receieved a flashlight, you can now see in the dark!");
-        Chapter4(character);
+        System.out.println(character + " receieved a flashlight, you can now see in the dark!");
+        System.out.println("(1) Investigate the Anemone.");
+        System.out.println("(2) Swim further down.");
+        int choice1 = sc.nextInt();
+        switch (choice1) {
+            case 1:
+                System.out.println(character + ": I see two Sea Anemones, which one should I investigate?");
+                System.out.println("(3) Sea Anemone");
+                System.out.println("(4) Sea Anemone");
+                int anemone = sc.nextInt();
+                switch (anemone) {
+                    case 3:
+                        System.out.println(character + ": I found SeaWeed! BOOYEAH");
+                        break;
+                    case 4:
+                        System.out.println(character + ": I found a jar of pickles!");
+                        break;
+                    default:
+                        System.out.println("Try selecting one of the options.\n");
+                        break;
+                }
+                break;
+            case 2: 
+                Chapter4(character);
+                break;
+        }
     }
     public static void Chapter4(String character) {
         Scanner sc = new Scanner(System.in);
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 4\nATLANTIS? WHAT?\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println(character + ": Wow it sure is dark down here, if it wasn't for my flashlight I couldn't see a thing!");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + ": Not that there's anything to see in the depths of a trench...");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("The outline of a building appears, it seems to be carved into the Earth around you");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + "Wow I guess there is something down here... wooow... there's an entire city in this trench");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + ": I wonder what city this is? Should I keep exploring it or just dive down more?");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("To keep swimming down and ignore the city enter: A");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("Or");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("To search the city enter: B");
-        String input = sc.nextLine();
-        if(input.equalsIgnoreCase("A")) {
-            Chapter4A(character);
-        } if(input.equalsIgnoreCase("B")) {
-            Chapter4B(character);
-        } else {
-            System.out.println("Please select A or B, game will not continue until one is picked.");
+        System.out.println("(1) Investigate the Anemone.");
+        System.out.println("(2) Swim further down.");
+        int choice1 = sc.nextInt();
+        switch (choice1) {
+            case 1:
+                System.out.println(character + ": I see two Sea Anemones, which one should I investigate?");
+                System.out.println("(3) Sea Anemone");
+                System.out.println("(4) Sea Anemone");
+                int anemone = sc.nextInt();
+                switch (anemone) {
+                    case 3:
+                        System.out.println(character + ": I found a Sea Cucumber");
+                        break;
+                    case 4:
+                        System.out.println(character + ": I found a baby Octopus!");
+                        break;
+                    default:
+                        System.out.println("Try selecting one of the options.\n");
+                        break;
+                }
+                break;
+            case 2: 
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println(character + ": Not that there's anything to see in the depths of a trench...");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println("The outline of a building appears, it seems to be carved into the Earth around you");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println(character + "Wow I guess there is something down here... wooow... there's an entire city in this trench");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println(character + ": I wonder what city this is? Should I keep exploring it or just dive down more?");
+                try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+                System.out.println("(A) Keep swimming down and ignore the city.");
+                System.out.println("(B) Enter and search the city.");
+                String input = sc.nextLine();
+                if(input.equalsIgnoreCase("A")) {
+                    Chapter4A(character);
+                } if(input.equalsIgnoreCase("B")) {
+                    Chapter4B(character);
+                } else {
+                    System.out.println("Please select A or B, game will not continue until one is picked.");
+                }
+                break;
         }
     }
     public static void Chapter4A(String character) {
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\n____________________\nCHAPTER 4\nVOICES, FIGURES, AND THE UNKNOWN...\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println(character + ": Alright with this flashlight I should be able to find that sleeping fish down here somewhere!");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + ": Hmm there seems to be a shadow following me, maybe it's just the light playing tricks on me?");
@@ -291,7 +485,16 @@ public class Storyboard extends CharacterCreator {
         //KrakenFight(character);
 	}
     public static void Chapter4B(String character) {
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\n____________________\nCHAPTER 4\nFISH CULTISTS\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println("You keep searching, as you do you notice a dark shadow floating about you, never coming close enough for you to be certain it’s a real solid thing or just the shadows playing tricks in the dim lights.");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("As you keep swimming you come across a massive building, much bigger than the rest.  You swim inside and find it’s made up of many small rooms that are deserted and empty.");
@@ -327,7 +530,15 @@ public class Storyboard extends CharacterCreator {
     }       
     public static void Chapter5A(String character) {
     	Scanner sc = new Scanner(System.in);
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 5\nCHTULU\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println("Fish Cultist: You've defeated our final test, for that we reward you with our greatest weapon.");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("You receieved the Kraken Sword, it has the ability to defeat injure and kill mythical monsters!");
@@ -346,24 +557,20 @@ public class Storyboard extends CharacterCreator {
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("Fish Cultist: It was prophesied that one being would reclaim the special weapon and reawake Chtulu when the time was necessary, that must be you.");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println(character + "Okay so I just need to wake him up? Dang my phones dead down here so I don’t have an alarm clock, do any of you?");
+        System.out.println(character + ": Okay so I just need to wake him up? Dang my phones dead down here so I don’t have an alarm clock, do any of you?");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("Fish Cultist: No sound can wake Chtulu, the only way to do so is to fight his bodyguard, do you want to reawaken Chtulu?");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("To fight the bodyguard of Chtulu to try and wake him: A");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("Or");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("Turn away and don't fight: B");
+        System.out.println("(A) Fight the bodyguard of Chtulu to try and wake him.");
+        System.out.println("(B) Turn away and don't fight.");
         String input = sc.nextLine();
         if(input.equalsIgnoreCase("A")) {
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("Fine, then keep swimming down, a giant shark, bigger than the city itself lies at the bottom of the trench.  If you defeat it, you will have access to Chtulu.");
-        //EndFight(character);
-        }
-        if(input.equalsIgnoreCase("B")) {
             try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-            System.out.println(character + "I can't do it, I don't want to destroy all life I just want to live!");
+            System.out.println("Fine, then keep swimming down, a giant shark, bigger than the city itself lies at the bottom of the trench.  If you defeat it, you will have access to Chtulu.");
+            //EndFight(character);
+        } if(input.equalsIgnoreCase("B")) {
+            try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+            System.out.println(character + ": I can't do it, I don't want to destroy all life I just want to live!");
             try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
             System.out.println("Fish Cultist: Well, we can’t let you live with what you know, Chtulu's bodyguard will destroy you either way.");
             //EndFight(character);
@@ -373,7 +580,15 @@ public class Storyboard extends CharacterCreator {
     }        	  
     public static void Chapter5B(String character) {
         Scanner sc = new Scanner(System.in);
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("\n____________________\nCHAPTER 5\nCHTULU\n");
+        try{TimeUnit.SECONDS.sleep(6);}catch(InterruptedException e){e.printStackTrace();}
+        System.out.println("Would you like to visit the GrubShop?\n(1) Yes\n(2) No");
+        int grub = sc.nextInt();
+        switch(grub) {
+            case 1:
+                GrubShop.Menu(character);
+                break;
+        }
         System.out.println("Fish Cultist: Small fish, you have proven yourself very strong and the fact that these events are transpiring are proof enough to us to lead you to our great sunken god.");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println(character + "GOD?!");
@@ -392,15 +607,12 @@ public class Storyboard extends CharacterCreator {
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("Fish Cultist: No sound can wake Chtulu, the only way to do so is to fight his bodyguard, do you want to reawaken Chtulu?");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("To fight the bodyguard of Chtulu to try and wake him: A");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("Or");
-        try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
-        System.out.println("Turn away and don't fight: B");
+        System.out.println("(A) Fight the bodyguard of Chtulu to try and wake him.");
+        System.out.println("(B) Turn away and don't fight");
         String input = sc.nextLine();
         switch(input) {
             case "A":
-                System.out.println("Fine, then keep swimming down, a giant shark, bigger than the city itself lies at the bottom of the trench.  If you defeat it, you will have access to Chtulu.");
+                System.out.println("Fish Cultist: Fine, then keep swimming down, a giant shark, bigger than the city itself lies at the bottom of the trench.  If you defeat it, you will have access to Chtulu.");
                     //EndFight(character);
                 break;
             case "B":     	 		
