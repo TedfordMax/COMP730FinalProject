@@ -50,6 +50,8 @@ public class ItemDrops {
 		Character.ArmorItem("Shoal Armor", 7, -2);	
 	}
   }
+	Character.getGold(200);
+	System.out.println("You found 200 gold on the " + Enemy.Name + " you'll be taking that for yourself! You now have " + Character.Gold + " gold.");
 }
 	if (Enemy.Name == "Fish Cultists") {
 		int randomIntW = rand.nextInt(2);	
@@ -71,6 +73,8 @@ public class ItemDrops {
 			Character.ArmorItem("Cultist Hood", 3, 5);	
 			}
 		}
+		Character.getGold(200);
+		System.out.println("You found 200 gold on the " + Enemy.Name + " you'll be taking that for yourself! You now have " + Character.Gold + " gold.");
 	}
 	if (Enemy.Name == "Angler Fish") {
 		int randomIntW = rand.nextInt(2);	
@@ -92,6 +96,8 @@ public class ItemDrops {
 			Character.ArmorItem("The Ocean's Lantern", 8, 6);	
 			}
 		}
+		Character.getGold(200);
+		System.out.println("You found 200 gold on the " + Enemy.Name + " you'll be taking that for yourself! You now have " + Character.Gold + " gold.");
 	}
 	if (Enemy.Name == "Alaskan Bull Worm") {
 		int randomIntW = rand.nextInt(2);	
@@ -113,6 +119,8 @@ public class ItemDrops {
 			Character.ArmorItem("Wurm Plating", 14, 2);	
 			}
 		}
+		Character.getGold(200);
+		System.out.println("You found 200 gold on the " + Enemy.Name + " you'll be taking that for yourself! You now have " + Character.Gold + " gold.");
 	}
  }
 }
