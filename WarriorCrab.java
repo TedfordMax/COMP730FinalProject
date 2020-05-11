@@ -4,6 +4,7 @@ public class WarriorCrab extends Character {
 	static public int Attack = 2;
 	static public int Sentience = 2;
 	static public int Health = 3;
+	static public int DefaultHealth = 3;
 	static public String Attack1 = "Ink-tipped Torpedo";
 	public static String Attack2 = "Crabtivating Wind-Up";
 	static public String Attack3 = "Krusty Exterior";
