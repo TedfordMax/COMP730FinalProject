@@ -55,6 +55,7 @@ public class Combat  {
 				System.out.println("You leveled up! Your attack and sentience has been increased by 2 and you gained 5 health!");
 			}
 			ItemDrops.getItems();
+			Character.Health = Character.DefaultHealth; 
 		}	
 	}		
 }
