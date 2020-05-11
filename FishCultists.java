@@ -1,4 +1,4 @@
-public class FishCultists extends Character {
+public class FishCultists extends Enemy {
 	static String Name = "Fish Cultists";
     	static int Attack = 3;
     	static int Sentience = 6;
