@@ -5,11 +5,7 @@ public class Combat  {
 	static Scanner in = new Scanner(System.in);
 	static Random rand = new Random();
 	
-	
-
-	@SuppressWarnings("static-access")
 	public static void UserCombat() {
-		String character = Storyboard.character;
 		Character.getItemStats();
 		System.out.println("Type in the first of the three combat abilities you want to use this combat phase. Use 1, 2, or 3.");
 		String a = in.nextLine();
@@ -64,9 +60,9 @@ public class Combat  {
 				System.out.println("You leveled up! Your attack and sentience has been increased by 2 and you gained 5 health!");
 			}
 			ItemDrops.getItems();
-			  }	
-		}		
-	}
+		}	
+	}		
+}
   
 
 	
