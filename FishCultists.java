@@ -1,5 +1,5 @@
 public class FishCultists extends Character {
-		static String Name = "Fish Cultists";
+	static String Name = "Fish Cultists";
     	static int Attack = 3;
     	static int Sentience = 6;
     	static int Health = 8;
