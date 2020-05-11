@@ -76,7 +76,8 @@ public class Storyboard extends CharacterCreator {
                 int anemone = sc.nextInt();
                 switch (anemone) {
                     case 4:
-                        System.out.println(character + ": I found Kelp!");
+                        System.out.println(character + ": I found 100 gold!");
+                        Character.getGold(100);
                         Chapter2B(character);
                         break;
                     case 5:
@@ -84,7 +85,8 @@ public class Storyboard extends CharacterCreator {
                         Chapter2B(character);
                         break;
                     case 6:
-                        System.out.println(character + ": I found Seaweed!");
+                        System.out.println(character + ": I found a Seaweed Sword! It gives 2 attack and 1 sentience.");
+                        Character.WeaponItem("Seaweed Sword", "1H-P", 2, 1);
                         Chapter2B(character);
                         break;
                     default:
@@ -102,6 +104,8 @@ public class Storyboard extends CharacterCreator {
                 System.out.println(character + ": A SWORDFISH?");
                 try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
                 System.out.println("Swordfish: You have trespassed through my territory, young " + character + " prepare to die.");
+                Swordfish.setStats();
+                Combat.UserCombat();
                 Chapter2B(character);
         }
     }
@@ -210,6 +214,9 @@ public class Storyboard extends CharacterCreator {
         System.out.println("As you look up you notice a dark cloud coming at you");
         try{TimeUnit.SECONDS.sleep(3);}catch(InterruptedException e){e.printStackTrace();}
         System.out.println("Piranha: Hey that fish is where the bloods coming from, get him!");
+        Piranhas.setStats();
+        Combat.UserCombat();
+        Chapter3A(character);
     }
     public static void Chapter2C(String character) {	
         Scanner sc = new Scanner(System.in);
