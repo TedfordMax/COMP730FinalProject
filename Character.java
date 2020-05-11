@@ -1,13 +1,10 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Character {
 	
 	static public Integer Level;
 	static public int Attack;
 	static public int Sentience;
 	static public int Health;
+	static public int DefaultHealth;
 	public static String Attack1;
 	public static String Attack2;
 	public static String Attack3;
@@ -26,6 +23,7 @@ public class Character {
 	public static Integer ArmorSentience;
 	public static String WeaponType;
 	public static String SecondaryWeaponType;
+	public static Integer Gold = 100;
 	    
     public static void getStats() {
     	System.out.println("Attack = " + Attack);
@@ -38,6 +36,7 @@ public class Character {
     	System.out.println("Attack 3 = " + Attack3);
     }
     public static void Attack1() {
+    	Enemy.Health = Enemy.Health - Character.Attack;
     	System.out.println("You attack for" + Attack + " damage!");
     }
     public static void Attack2() {
@@ -79,7 +78,14 @@ public class Character {
 		WeaponStats = newWeaponStats;
 		WeaponSentience = newWeaponSentience;
 		WeaponType = newWeaponType;
-		//WeaponInventory.add(WeaponName);
+		if (newWeaponType == "2H-P") {
+			SecondaryWeaponName = "";
+			SecondaryWeaponType = "";
+			SecondaryWeaponStats = 0;
+			SecondaryWeaponSentience = 0;
+			SecondaryWeaponHealth = 0;
+		}
+		
 	}
 	public static void SecondaryWeaponItem(String newSecondaryWeaponName, String newSecondaryWeaponType, Integer newSecondaryWeaponStats, Integer newSecondaryWeaponSentience, Integer newSecondaryWeaponHealth) {
 		SecondaryWeaponName = newSecondaryWeaponName;
@@ -93,10 +99,10 @@ public class Character {
 		ArmorStats = newArmorStats;
 		ArmorSentience = newArmorSentience;
 	}
-	//private static List<String> WeaponInventory(String WeaponName) {
-		//return WeaponInventory;
-		
-	//}
+	public static void getGold(Integer goldAmount) {
+		Gold = Gold + goldAmount;
+	}
+	
 	public static void getItemStats() {
 		Attack = Attack + WeaponStats + SecondaryWeaponStats;
 		Health = Health + ArmorStats + SecondaryWeaponHealth;
@@ -105,7 +111,7 @@ public class Character {
 	public static void levelUp() {
 		if (XP == 10) {
 		Attack = Attack + 2;
-		Health = Health + 5;
+		DefaultHealth = DefaultHealth + 5;
 		Sentience = Sentience + 2;
 		Level = Level + 1;
 		if (XP >= 10) {
