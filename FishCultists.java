@@ -41,10 +41,10 @@ public class FishCultists extends Enemy {
     	Health = Health + Sentience/2;
     	System.out.println("The cultists begin shouting for aid, as more cultists heed their call, their sentience is increased by 1 and their health is increased by " + (Health + Sentience/2));
     	}
-    public void VictoryLine() {
+    public static void VictoryLine() {
 		System.out.println(VictorySpeech);
 	}
-	public void DefeatLine() {
+    public static void DefeatLine() {
 		System.out.println(DefeatSpeech);
 	}
 }
